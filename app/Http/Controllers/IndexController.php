@@ -10,11 +10,11 @@ use Illuminate\View\View;
 class IndexController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Exibe os ultimos eventos na home
      */
     public function home(): View
     {
-        $last_events = Eventos::where('date_evento', '>=', now())->limit(3)->get() ?? null;
+        $last_events = Eventos::orderBy("date_evento", "DESC")->limit(3)->get() ?? null;
 
         return view('welcome', [
             'user' => auth::user(),
@@ -23,7 +23,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Display the user's profile form.
+     * Tela de dashboard, ao logar, com a lista de quantidade de promoters e eventos
      */
     public function dashboard(): View
     {

@@ -31,6 +31,8 @@ docker build -t weefdocker .
 docker run -p 80:80 weefdocker
 ```
 
+obs: depois de rodar o projeto no docker, preencha o .env no container (ou altere o script 00-laravel-deploy em scripts/00-laravel-deploy)
+
 ### Artisan
 ```bash
 php artisan serve

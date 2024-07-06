@@ -62,7 +62,9 @@ class EventosController extends Controller
                     }
 
                     // Exclua a imagem do public path
-                    unlink(public_path($evento->imagem));
+                    if (file_exists(public_path($evento->imagem))) {
+                        unlink(public_path($evento->imagem));
+                    }
                 }
                 // salva a nova capa
                 $file = $request->file('imagem');
@@ -87,7 +89,8 @@ class EventosController extends Controller
         }
         catch (\Throwable $th)
         {
-            return Redirect::route('eventos.open',['id'=>$evento->id])->with('status', 'Erro ao atualizar. Contacte o suporte');
+            // return Redirect::route('eventos.open',['id'=>$evento->id])->with('status', 'Erro ao atualizar. Contacte o suporte');
+            return Redirect::route('eventos.open',['id'=>$evento->id])->with('status', $th->getMessage());
         }
     }
 
