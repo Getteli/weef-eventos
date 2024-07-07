@@ -79,10 +79,10 @@
                             {{ __('Próximos eventos') }}
                         </h2>
                     </header>
-                    <div class="flex flex-row flex-nowrap justify-center items-center">
+                    <div class="flex md:flex-row flex-col justify-center items-center">
                         @if($last_events)
                         @foreach ($last_events as $event)
-                            <a href="#" class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mx-3">
+                            <a href="#" class="block min-w-full md:min-w-[220px] mb-4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mx-3">
                                 @if($event->imagem)
                                     <img src="{{asset($event->imagem)}}" width="200px">
                                 @endif
