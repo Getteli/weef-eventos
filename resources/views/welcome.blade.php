@@ -84,7 +84,7 @@
                         @foreach ($last_events as $event)
                             <a href="#" class="block min-w-full md:min-w-[220px] mb-4 max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 mx-3">
                                 @if($event->imagem)
-                                    <img src="{{asset($event->imagem)}}" width="200px">
+                                    <img src="{{asset($event->imagem)}}" class="image-position" width="200px">
                                 @endif
                                 <h5 class="mb-2 text-xl font-bold tracking-tight text-gray-900 text-center">{{$event->nome}}</h5>
                                 <h5 class="text-1xl text-gray-700 text-center">{{$event->date_evento->format('d/m/Y H:i:s')}}</h5>

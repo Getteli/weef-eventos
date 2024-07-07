@@ -9,3 +9,8 @@
     margin-left: 5%;
     z-index: 999;
 }
+
+.image-position
+{
+    margin: 0 auto;
+}
